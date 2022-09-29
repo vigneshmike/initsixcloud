@@ -23,7 +23,7 @@ pipeline {
            steps {
                script {         
                  def customImage = docker.build('vigneshbc/petcliniclab', "./docker")
-                 docker.withRegistry('https://registry.hub.docker.com', 'viggy'') {
+                 docker.withRegistry('https://registry.hub.docker.com', 'viggy') {
                  customImage.push("${env.BUILD_NUMBER}")
                  }                     
            }
